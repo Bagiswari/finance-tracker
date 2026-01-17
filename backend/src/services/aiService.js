@@ -8,7 +8,7 @@ class AIService {
     try {
       console.log('🤖 AI categorizing:', description);
 
-      // Use the correct model name: gemini-1.5-flash
+      // Use the correct model name: gemini-2.5-flash
       const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
       const prompt = `You are a financial assistant. Categorize this transaction into ONE of these categories:

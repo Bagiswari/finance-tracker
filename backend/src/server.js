@@ -50,6 +50,20 @@ app.use((err, req, res, next) => {
 
 // Start server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`📍 Health check: http://localhost:${PORT}/health`);
+  console.log(`📍 Auth: http://localhost:${PORT}/api/auth`);
+  console.log(`📍 Transactions: http://localhost:${PORT}/api/transactions`);
+  console.log(`📍 Categories: http://localhost:${PORT}/api/categories`);
+  console.log(`📍 AI: http://localhost:${PORT}/api/ai`);
+  console.log(`📍 Budgets: http://localhost:${PORT}/api/budgets`);
+});
+
+// Handle shutdown gracefully
+process.on('SIGTERM', () => {
+  console.log('SIGTERM signal received: closing HTTP server');
+  server.close(() => {
+    console.log('HTTP server closed');
+  });
 });

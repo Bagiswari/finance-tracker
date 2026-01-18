@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { transactionAPI, aiAPI } from '../services/api';
 import {
-  TrendingUp,
-  Calendar,
+    TrendingUp,
+  
   PieChart as PieChartIcon,
   BarChart3,
   Sparkles,
-  Download,
+  
   Loader
 } from 'lucide-react';
 import {
-  LineChart,
-  Line,
+  
+  
   BarChart,
   Bar,
   PieChart,

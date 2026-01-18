@@ -6,6 +6,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Transactions from './pages/Transactions';
+import Analytics from './pages/Analytics';
+import Budgets from './pages/Budgets';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -61,6 +63,27 @@ function App() {
     <ProtectedRoute>
       <Layout>
         <Transactions />
+      </Layout>
+    </ProtectedRoute>
+  }
+/>
+          <Route
+  path="/analytics"
+  element={
+    <ProtectedRoute>
+      <Layout>
+        <Analytics />
+      </Layout>
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/budgets"
+  element={
+    <ProtectedRoute>
+      <Layout>
+        <Budgets />
       </Layout>
     </ProtectedRoute>
   }
